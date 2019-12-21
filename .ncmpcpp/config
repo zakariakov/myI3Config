@@ -1,0 +1,32 @@
+## Note: You can specify third character which will
+## be used to build 'empty' part of progressbar.
+
+
+mpd_host = "127.0.0.2"
+mpd_port = "1717"
+
+mpd_music_dir = "/home/yahia/Music/"
+#
+mpd_connection_timeout = "5"
+#
+##
+#progressbar_look = "◾◾◽"
+#progressbar_look = "=>"
+#progressbar_look = "─- "
+#progressbar_look = "▒▒░"
+#progressbar_look = "┅┅┄"
+#progressbar_look = "─⊙┄"
+progressbar_look = "━╍─"
+#progressbar_look = "─➞─"
+#progressbar_look = "─┅─"
+#progressbar_look = "▪▪▪"
+#progressbar_look = "▪▪▫"
+#progressbar_look = "───"
+#progressbar_look = "▁▁▁"
+#progressbar_look =  "=>-"
+#progressbar_look = "‒‒‒"
+#progressbar_look = "■◣ "
+#progressbar_look = "◈◆◇"
+#progressbar_look = "─╼ "
+#
+#progressbar_boldness = yes

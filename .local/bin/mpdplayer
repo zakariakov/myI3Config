@@ -1,0 +1,15 @@
+#!/bin/sh
+
+
+ icon1=""
+ icon2=""
+mpc --host 127.0.0.2 toggle  >/dev/null
+
+ NCMP=$( mpc --host 127.0.0.2 status | awk '/^\[playing\]/{print $1}')
+
+ if [ "$NCMP" = "[playing]" ];then 
+   #TITLE=$( mpc --host 127.0.0.2  -f "[%title% | %file%]" | head -n 1 )
+echo $icon2
+ else
+echo $icon1
+ fi
