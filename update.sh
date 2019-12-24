@@ -50,17 +50,16 @@ cp -f $TERM/elokab-terminal.conf  $DOT/.config/elokab
 
 echo Git Add
 
-git add $DOT/*
-git add $DOT/.mpd/*
-git add $DOT/.ncmpcpp/*
-git add $DOT/.local/bin/*
-git add $DOTCONF/i3/*
-git add $DOTCONF/gtk-3.0/*
-git add $DOTCONF/ranger/*
-git add $DOTCONF/ranger/plugins/ranger_devicons/*
-git add elokab/*
+git add .mpd/*
+git add .ncmpcpp/*
+git add .local/bin/*
+git add .config/i3/*
+git add .config/gtk-3.0/*
+git add .config/ranger/*
+git add .config/ranger/plugins/ranger_devicons/*
+git add .config/elokab/*
 git add .Xresources
-git add .gtkrc-2.O
+git add .gtkrc-2.0
 git add .profile
 git add .zshrc
 git add update.sh
