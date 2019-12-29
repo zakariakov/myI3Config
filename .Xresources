@@ -51,11 +51,11 @@ urxvt.saveLines:8000
 
 !color
 ! special
-*.foreground:   #D0D0D0
+*.foreground:#898B8B
 !sweet
 !*.background:   [95]#161925
 !arc-dark
-*.background:   #2F343F
+*.background:#1A1E21
 !urxvt*background: rgba:2F00/3400/3F00/f380
 *.cursorColor:  #93a1a1
 
@@ -64,7 +64,7 @@ urxvt.saveLines:8000
 *.color8:       #657b83
 
 ! red
-*.color1:       #dc322f
+*.color1:       #FF4C3F
 *.color9:       #dc322f
 
 ! green

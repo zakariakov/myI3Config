@@ -1,0 +1,62 @@
+#!/bin/bash
+ROOT="$(readlink -f $(dirname "$0"))" COLORDIR=$ROOT/"$1" 
+
+print_usage() {
+	echo "Usage: $0 [options]"
+
+	echo
+	echo "Options:"
+	echo " -l Lieght theme"
+	echo " -d Dark theme"
+
+	exit 1
+}
+
+while [[ $# > 0 ]]
+		do
+		case ${1} in
+			-h)
+				print_usage
+                        ;;
+			-l)
+				#echo "skip termite $#"
+				LIGHT="true"
+			;;
+			-d)
+				#echo "skip elokab $#"
+			        Dark="true"
+
+			;;
+		esac
+    shift 
+done
+
+#-------------------------------------------------------------------------------------------------------------------
+function set_config(){
+     sed -i "s/^\($1\s*=\s*\).*\$/\1$2/" "$3"
+}
+
+function set_msg(){
+	BOLD="\e[1;34m"
+	COLORED="\e[1;33m"
+	NORMAL="\e[1;0m"
+
+	printf "${COLORED}------------------------------------------------${NORMAL}\n"
+	printf "${BOLD}	$1${NORMAL}\n"
+	printf "${COLORED}------------------------------------------------${NORMAL}\n"
+
+}
+
+
+
+XCOLORBG=$( xrdb -query | egrep -m1 "^\*\.?background:" | cut 
+-d ":" -f 2-)
+  	echo "[+] background =" $XCOLORBG
+		  
+	XCOLORFG=$( xrdb -query | egrep -m1 
+"^\*\.?foreground:" | cut -d ":" -f 2-)
+		echo "[+] foreground =" $XCOLORFG
+		 
+	XCOLOR0=$( xrdb -query | egrep -m1 "^\*\.?color0:" | 
+cut -d ":" -f 2-)
+		echo "[+] color0 =" $XCOLOR0

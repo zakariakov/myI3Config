@@ -1,15 +1,22 @@
 #!/bin/sh
 
-
- icon1=""
- icon2=""
-mpc --host 127.0.0.2 toggle  >/dev/null
+# TOGGLE=$1
+ #if [ "$TOGGLE" = "toggle" ];then
+  # if [ $PID>/dev/null ];then
+   #  echo "mpd is running $PID"
+ #  else
+  #   mpd
+   # sleep 5
+  # fi
+  mpc --host 127.0.0.2 $1 >/dev/null
+#fi
 
  NCMP=$( mpc --host 127.0.0.2 status | awk '/^\[playing\]/{print $1}')
 
  if [ "$NCMP" = "[playing]" ];then 
-   #TITLE=$( mpc --host 127.0.0.2  -f "[%title% | %file%]" | head -n 1 )
-echo $icon2
+    echo ""
  else
-echo $icon1
+   echo ""
  fi
+
+exit 0

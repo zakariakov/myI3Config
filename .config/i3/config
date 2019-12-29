@@ -67,6 +67,9 @@ bindsym $mod+Shift+Return exec urxvt
 ## kill focused window
 bindsym $mod+x kill
 
+## menu exit system
+bindsym $mod+Shift+x exec ~/.local/bin/power.sh
+
 ## start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
 bindsym $mod+d exec rofi -show run 
@@ -196,7 +199,6 @@ gaps inner 5
 gaps outer 1
 	
 mode "gaps_inner" {
-	
 	bindsym Up		 gaps inner current plus 5
 	bindsym Down		 gaps inner current minus 5
 	bindsym agrave		 gaps inner current set 0
@@ -218,7 +220,8 @@ mode "gaps_outer" {
 	bindsym Escape mode "default"
 	bindsym $mod+g mode "default"
 }
-bindsym $mod+g mode "gaps_inner"
+
+bindsym $mod+g mode "gaps_inner" ; exec --no-startup-id notify-send -t 60000 'Presse escape to exit mode gaps'
 bindsym $mod+Shift+g mode "gaps_outer"
 
 ## Colors set
@@ -228,17 +231,17 @@ bindsym $mod+Shift+g mode "gaps_outer"
 set $Urgent #FF2D00
 
 set_from_resource	$BGR	background	#222222
-set_from_resource	$HGR    foreground	#ffffff
+set_from_resource	$FGR    foreground	#ffffff
 set_from_resource	$HGR    color1		#0c0c0c
 
+## Window colorso
 
-
-## Window colors
 ## class                border  backgr. text        indicator child_border
 client.focused          $HGR    $HGR    $FGR       $HGR     $HGR 
-client.focused_inactive #383C4A #383C4A $FGR       #383C4A   #383C4A
-client.urgent           $Urgent $Urgent $FGR       #900000   $Urgent
-client.placeholder      #000000 #0c0c0c $FGR       #000000   #0c0c0c
+client.focused_inactive $BGR    $BGR    $FGR       $BGR     $BGR
+client.unfocused        $BGR    $BGR    $FGR       $BGR     $BGR
+client.urgent           $Urgent $Urgent $FGR       $Utgent   $Urgent
+client.placeholder      $BGR     $BGR   $FGR       $BGR      $BGR
 
 client.background       #ffffff
 
@@ -257,31 +260,29 @@ exec --no-startup-id		volumeicon
 #exec --no-startup-id           xscreensaver -nosplash
 
 
-
+exec_always --no-startup-id ~/.config/qobbar/launch.sh greenbar
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
+#bar {
      
      #font pango:TerminessTTF Nerd Font 10
      #status_command i3status  -c  ~/.config/i3/i3status.conf
-     status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#     status_command i3blocks -c ~/.config/i3/i3blocks.conf
      #i3bar_command i3bar --transparency   
      #strip_workspace_numbers yes
-     position top
-     colors {
+#     position top
+#     colors {
 ## color transpareny rgba
 ##  ful transparent O[0-9 to 0[a-f] to a[O-9]  to a[a-f]
 ##  full opac ff  
-        background $BGR
-        statusline $FGR
-        separator  #363E45
+#        background $BGR
+#        statusline $FGR
+#        separator  #363E45
 #       <colorclass>	 <border>  <background>  <text>
-        focused_workspace  $HGR    $HGR	 $FGR
-        active_workspace   #5E6065 #2F343F	 $FGR
-        inactive_workspace $BGR    $BGR	         $FGR
-        urgent_workspace   #2f343a $Urgent	 $FGR
-        binding_mode       #2f343a #900000	 $FGR
-    }
-}
-
-
+#        focused_workspace  $HGR    $HGR	 $FGR
+#        active_workspace   #5E6065 #2F343F	 $FGR
+#        inactive_workspace $BGR    $BGR	         $FGR
+#        urgent_workspace   #2f343a $Urgent	 $FGR
+#        binding_mode       #2f343a #900000	 $FGR
+#    }
+#}

@@ -6,7 +6,7 @@ I3WM=~/.config/i3
 GTK3=~/.config/gtk-3.0
 RANG=~/.config/ranger
 TERM=~/.config/elokab
-
+QOB=~/.config/qobbar
 echo Home files
 cp -f ~/.Xresources $DOT/.Xresources 
 cp -f ~/.zshrc $DOT/.zshrc 
@@ -47,6 +47,10 @@ echo Elokab-terminal
 mkdir -p $DOTCONF/elokab
 cp -f $TERM/elokab-terminal.conf  $DOT/.config/elokab
 
+echo Qobbar
+mkdir -p $DOTCONF/qobbar
+cp -f $QOB/greenbar.conf  $DOT/.config/qobbar
+
 
 echo Git Add
 
@@ -58,6 +62,7 @@ git add .config/gtk-3.0/*
 git add .config/ranger/*
 git add .config/ranger/plugins/ranger_devicons/*
 git add .config/elokab/*
+git add .config/qobbar/*
 git add .Xresources
 git add .gtkrc-2.0
 git add .profile

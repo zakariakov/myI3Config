@@ -29,6 +29,7 @@ fi
 
 if [  "$XDG_CURRENT_DESKTOP" = "i3"  ];then
     export QT_QPA_PLATFORMTHEME="gtk3"
+    export QT_STYLE_OVERRIDE="Sweet-mars"
     export GTK_CSD=0
     #export MPD_HOST ="127.0.0.2"
     export MPD_PORT=1717
